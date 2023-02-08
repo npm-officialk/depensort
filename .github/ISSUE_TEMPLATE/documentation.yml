@@ -1,0 +1,58 @@
+name: 📚 Documentation issue
+description: Suggest an enhancement/fix to documentation
+title: "DocFix: "
+labels:
+    - "issue: documentation 📃"
+    - "status: backlog 📚"
+    - "priority: low ⚪"
+body:
+    - type: markdown
+      attributes:
+          value: |
+              - [x] Documentation
+                Thank you for helping us make documentation better! Use the sections below to submit a issue.
+              - All help is welcome - we want to fix them!⚒️
+              - This repo is maintained by volunteers. Please be courteous and patient. 🙂
+              - Remember to include sufficient details and context.
+              - If you have multiple documentation suggestions to report, please submit them as separate issues.
+              - We accept pull requests. If you know how to fix it - go ahead!
+
+    - type: dropdown
+      id: action
+      attributes:
+          label: ⚒️ Do you want to add, repair or remove documentation?
+          options:
+              - "Add"
+              - "Repair"
+              - "Remove"
+
+    - type: input
+      id: topic
+      validations:
+          required: true
+      attributes:
+          label: 📄 Where is the documentation change needed?
+          description: name of the modele > function > etc where the change is needed
+
+    - type: markdown
+      attributes:
+          value: Provide a clear & concise description of why the documentation change is needed.
+
+    - type: textarea
+      id: description
+      validations:
+          required: true
+      attributes:
+          label: 🖊️ Please describe the bug in detail
+          description: Please provide the issue being faced along with the context
+          value: |
+              the documentation in
+              {module > function > etc} needs to be
+              {added/remove/updated} as the code for it is {changed/removed}
+              [and needs to be updated to {new documentation}]
+
+    - type: textarea
+      validations:
+          required: false
+      attributes:
+          label: 😊 Any other notes you want to add

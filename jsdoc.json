@@ -1,0 +1,39 @@
+{
+    "plugins": ["node_modules/better-docs/typescript"],
+    "recurseDepth": 10,
+    "source": {
+        "include": ["./src"],
+        "includePattern": "\\.(jsx|js|ts|tsx)$"
+    },
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc", "closure"]
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "search": true,
+        "better-docs": {
+            "name": "depensort Documentation",
+            "title": "depensort",
+            "hideGenerator": true,
+            "navLinks": [
+                {
+                    "label": "Github",
+                    "href": "https://github.com/npm-officialk/depensort"
+                },
+                {
+                    "label": "NPM",
+                    "href": "https://www.npmjs.com/~officialk"
+                }
+            ]
+        }
+    },
+    "opts": {
+        "template": "node_modules/better-docs",
+        "destination": "./docs/",
+        "readme": "README.md",
+        "recurse": true
+    }
+}

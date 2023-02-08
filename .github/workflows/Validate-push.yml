@@ -1,0 +1,44 @@
+name: "🏗️📥 Validate push"
+run-name: ${{ github.workflow }}-${{ github.ref_name }}
+
+on:
+    push:
+        branches-ignore:
+            - "main"
+            - "development"
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref_name }}
+    cancel-in-progress: true
+
+jobs:
+    # check all commits on push
+    commitlint:
+        name: "🔍 lint through the commit messages"
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+
+            - uses: wagoid/commitlint-github-action@v5
+              with:
+                  configFile: ./.commitlintrc
+                  failOnWarnings: false
+
+    # prettifying the files
+    pretty:
+        needs: [commitlint]
+        name: "🎨 prettify the code"
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+                  token: ${{ secrets.GH_TOKEN }}
+
+            - uses: creyD/prettier_action@v4.2
+              with:
+                  commit_message: "chore(formatting): [skip ci] updating format to be consistent"
+                  prettier_options: "--ignore-unknown --config ./.prettierrc --write ./"
+                  github_token: ${{ secrets.GH_TOKEN }}

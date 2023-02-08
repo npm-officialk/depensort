@@ -1,0 +1,74 @@
+name: 💡 Suggest/Request a new Feature
+description: Have an idea which you would want implemented, or even help to create?
+title: "Feature: "
+labels:
+    - "issue: feature ⬆️"
+    - "status: backlog 📚"
+    - "priority: normal 🟡"
+body:
+    - type: markdown
+      attributes:
+          value: |
+              - [x] Feature
+              - [x] Suggestion
+                Thank you for an awesome suggestion/request! Use the sections below to submit a suggestion related to this repo. 
+              - All feature suggestion/request are welcome - lets build something great!⚒️
+              - This repo is maintained by volunteers. Please be courteous and patient. 🙂
+              - Remember to include sufficient details and context.
+              - If you have multiple suggestions/requests, please submit them as separately.
+              - We accept pull requests. If you know how to build it - go ahead!
+              _please do create a feature request before you start working on/create a pull request_
+
+    - type: input
+      id: summary
+      validations:
+          required: true
+      attributes:
+          label: 📄 Summary of the suggestion/request
+          description: give a brief description of the suggestion/request
+
+    - type: markdown
+      attributes:
+          value: |
+              Provide a clear & concise description of what the suggestion/request is.
+              Screenshots are appreciated ❤️
+
+    - type: textarea
+      id: description
+      validations:
+          required: true
+      attributes:
+          label: 📚 Please describe the suggestion/request in detail
+          description: Please provide the context along with the use case
+          value: |
+              Here's what we could do,
+              {suggestion/request},
+              which helps us achieve {use case/problem the idea solves}
+              but, it may impact {impacted areas}
+
+    - type: textarea
+      id: solution
+      validations:
+          required: false
+      attributes:
+          label: 🧪 Proposed solution
+
+    - type: textarea
+      id: alternatives
+      validations:
+          required: false
+      attributes:
+          label: 🤔 Alternatives considered/tried
+
+    - type: dropdown
+      attributes:
+          label: ⚒️ Will you be helping to create the feature?
+          options:
+              - "Yes"
+              - "No"
+
+    - type: textarea
+      validations:
+          required: false
+      attributes:
+          label: 😊 Any other notes you want to add

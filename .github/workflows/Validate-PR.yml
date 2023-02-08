@@ -1,0 +1,23 @@
+name: "🏗️🔱 Validate pull request"
+run-name: ${{ github.workflow }}-${{ github.ref_name }}
+
+on:
+    pull_request:
+        types:
+            - opened
+            - reopened
+            - edited
+            - synchronize
+        branches:
+            - main
+            - development
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref_name }}
+    cancel-in-progress: true
+
+jobs:
+    validate:
+        name: "✅ validate the pushed changes"
+        uses: ./.github/workflows/validate.yml
+        secrets: inherit

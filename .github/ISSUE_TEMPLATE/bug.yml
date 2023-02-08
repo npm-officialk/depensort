@@ -1,0 +1,128 @@
+name: 🐞 Report a Bug
+description: Report a bug which you are facing along with the steps to recreate it
+title: "Bug: "
+labels:
+    - "issue: bug 🐛"
+    - "status: backlog 📚"
+    - "priority: normal 🟡"
+body:
+    - type: markdown
+      attributes:
+          value: |
+              - [x] Bug
+                Thank you for reporting a bug! Use the sections below to submit a bug.
+              - All bug reports are welcome - we want to fix them!⚒️
+              - This repo is maintained by volunteers. Please be courteous and patient. 🙂
+              - Remember to include sufficient details and context.
+              - If you have multiple bugs to report, please submit them as separate issues.
+              - We accept pull requests. If you know how to fix it - go ahead!
+
+    - type: input
+      id: summary
+      validations:
+          required: true
+      attributes:
+          label: 📄 Summary of the bug
+          description: give a brief description of the bug being faced
+
+    - type: markdown
+      attributes:
+          value: |
+              Provide a clear & concise description of what the bug is.
+              Do not attach ZIP files of your code or compiled projects
+              instead, please publish your code to a public GitHub repo & post a link to it.
+              Screenshots are appreciated ❤️
+
+    - type: textarea
+      id: description
+      validations:
+          required: true
+      attributes:
+          label: 📚 Please describe the bug in detail
+          description: Please provide the issue being faced along with the context
+          value: |
+              I am facing
+              {issue description}
+              while using the
+              {function/module/page/package}
+              in the
+              {version}
+              along with
+              {dependencies if any}
+              here is the example of code
+              {code example/link}
+              note: if the example is a big one please commit it to a public repo and link it here.
+
+    - type: textarea
+      id: steps
+      validations:
+          required: true
+      attributes:
+          label: ⏳ Steps to reproduce the bug
+          description: List down the steps in order to reproduce the bug.
+          value: |
+              1.
+              2.
+              3.
+
+    - type: textarea
+      id: outcomes
+      validations:
+          required: true
+      attributes:
+          label: 👍 Expected vs 😱 Observed outcome.
+          description: Please describe the outcome you expected and what was it you observed.
+          value: |
+              after following the above steps to reproduce the bug,
+              I expected 
+              {expected outcome}.
+              but, I observed 
+              {observed outcome}.
+
+    - type: checkboxes
+      id: browser
+      attributes:
+          label: 🌐 Browser the bug occured on
+          description: Please select the browser where the bug occured
+          options:
+              - label: Chrome
+              - label: Firefox
+              - label: EDGE
+              - label: Safari/Explorer
+              - label: Others
+
+    - type: textarea
+      id: versionWeb
+      validations:
+          required: false
+      attributes:
+          label: The version of the browser/s
+          description: please clarify the version of the browser/s on which the bug occured
+
+    - type: checkboxes
+      id: os
+      attributes:
+          label: 🖥️ Operating system/s the bug occured in
+          description: Please select the operating system/s where the bug occured
+          options:
+              - label: all
+              - label: Windows
+              - label: Linux
+              - label: Mac
+              - label: Android
+              - label: iPhone
+              - label: Others
+
+    - type: textarea
+      id: versionOS
+      validations:
+          required: false
+      attributes:
+          label: The versions of the system/s
+          description: please clarify the version of the system/s on which the bug occured
+
+    - type: textarea
+      validations:
+          required: false
+      attributes:
+          label: 😊 Any other notes you want to add

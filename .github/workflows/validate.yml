@@ -1,0 +1,48 @@
+name: "🏗️📦 Validate build"
+run-name: ${{ github.workflow }}-${{ github.ref_name }}
+
+on:
+    workflow_call:
+        inputs:
+            os:
+                type: string
+                description: "the operating system/s the jobs need to be set up with"
+                default: "ubuntu-latest"
+            node:
+                type: string
+                description: "the version/s node needs to be set up with"
+                default: "16"
+        secrets:
+            SNYK_TOKEN:
+                required: false
+
+jobs:
+    # setup the project and needed tools
+    setup:
+        name: "⚙️ setup project"
+        uses: ./.github/workflows/uniflow-setup.yml
+
+    # check static code quality and formatting
+    QA:
+        needs: [setup]
+        name: "🎨 check code quality"
+        uses: ./.github/workflows/uniflow-qa.yml
+
+    # check tests and coverage of code
+    tests:
+        needs: [QA]
+        name: "🧪 test code coverage"
+        uses: ./.github/workflows/uniflow-test.yml
+
+    # audit packages, library and code vunerabilites
+    audit:
+        needs: [tests]
+        name: "🔍 audit vunerabilities"
+        uses: ./.github/workflows/uniflow-audit.yml
+        secrets: inherit
+
+    # build output files and folders
+    build:
+        needs: [audit]
+        name: "📦 build outputs"
+        uses: ./.github/workflows/uniflow-build.yml

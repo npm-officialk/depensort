@@ -1,0 +1,23 @@
+# folders
+node_modules
+.git
+.github
+.husky
+.vscode
+coverage
+docs
+QA
+src
+tests
+assets
+
+# dev files
+.*
+jest.config.json
+jsdoc.json
+nodemon.json
+todo.md
+yarn.lock
+README.md
+.env
+*.spec.*

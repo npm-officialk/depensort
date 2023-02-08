@@ -1,0 +1,11 @@
+# folders
+node_modules
+.git
+.husky
+dist
+docs
+coverage
+QA
+
+# files
+CODEOWNERS

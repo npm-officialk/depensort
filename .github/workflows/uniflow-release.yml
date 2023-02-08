@@ -1,0 +1,48 @@
+name: "🧱➛🎯 release outputs"
+
+on:
+    workflow_call:
+        inputs:
+            os:
+                type: string
+                description: "the operating system/s the jobs need to be set up with"
+                default: "ubuntu-latest"
+            node:
+                type: string
+                description: "the version/s node needs to be set up with"
+                default: "16"
+            env:
+                type: string
+                description: "The environment to deploy to"
+                default: "development"
+        secrets:
+            GH_TOKEN:
+                required: true
+            NPM_TOKEN:
+                required: true
+
+jobs:
+    dist:
+        name: "publishing the package to npm"
+        runs-on: ${{ inputs.os }}
+        environment: ${{ inputs.env }}
+        permissions: write-all
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  token: ${{ secrets.GH_TOKEN }}
+                  persist-credentials: false
+                  fetch-depth: 0
+
+            - uses: DerYeger/yarn-setup-action@master
+              with:
+                  node-version: ${{ inputs.node }}
+            - name: "create a ${{ inputs.env }} release"
+              run: yarn run release
+
+            - uses: creyD/prettier_action@v4.2
+              name: "prettifying things"
+              with:
+                  commit_message: "ci(formatting): [skip ci] updating format to be consistent"
+                  prettier_options: "--ignore-unknown --config ./.prettierrc --write ./"
+                  github_token: ${{ secrets.GH_TOKEN }}

@@ -1,0 +1,47 @@
+name: "🧱➛🎨 check code quality"
+
+on:
+    workflow_call:
+        inputs:
+            os:
+                type: string
+                description: "the operating system/s the jobs need to be set up with"
+                default: "ubuntu-latest"
+            node:
+                type: string
+                description: "the node version/s the jobs need to be set up with"
+                default: "16"
+
+jobs:
+    # check the format of code using prettier
+    format:
+        name: "checking code format"
+        runs-on: ${{ inputs.os }}
+        steps:
+            - uses: DerYeger/yarn-setup-action@master
+              with:
+                  node-version: ${{ inputs.node }}
+            - run: yarn run check:format
+
+    # check the code quality using eslint
+    lint:
+        name: "checking code quality"
+        runs-on: ${{ inputs.os }}
+        steps:
+            - uses: DerYeger/yarn-setup-action@master
+              with:
+                  node-version: ${{ inputs.node }}
+            - run: yarn run check:quality
+
+    # check the commit format
+    commit:
+        name: "checking commits"
+        runs-on: ${{ inputs.os }}
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+            - uses: wagoid/commitlint-github-action@v5
+              with:
+                  configFile: ./.commitlintrc
+                  failOnWarnings: false

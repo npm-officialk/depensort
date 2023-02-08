@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo 'checking validity of commit message'
+npx --no -- commitlint --config .commitlintrc --edit ${1}
+echo 'all ok! commit created'

@@ -1,0 +1,42 @@
+name: ❓ Ask a Question
+description: ask a question about a feature, bug or anything in the repo bothering you.
+title: "Question: "
+labels:
+    - "support: question ❓"
+    - "status: backlog 📚"
+    - "support: help wanted 🆘"
+    - "priority: low ⚪"
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thank you for asking a question! Use the sections below to submit a question related to this repo.
+              - Questions that do not follow the below template will automatically be closed
+              - All questions are welcome - let us know what's on your mind!
+              - This repo is maintained by volunteers. Please be courteous and patient. 🙂
+              - Remember to include sufficient details and context.
+              - If you have multiple questions please submit them separately so we can track resolution.
+              - Screenshots are always helpful (just paste any images right here in the question)
+              - If you're trying to start a conversation on a topic, consider using Discussions.We want to close every issue as quickly as possible, but discussions are intended for longer conversations.
+
+    - type: input
+      id: question
+      validations:
+          required: true
+      attributes:
+          label: 📄 Summary of the question
+          description: give a brief description of the question
+
+    - type: textarea
+      id: description
+      validations:
+          required: false
+      attributes:
+          label: 📚 Please describe the question in detail
+          description: Please provide the context to the question
+
+    - type: textarea
+      validations:
+          required: false
+      attributes:
+          label: 😊 Any other notes you want to add

@@ -1,0 +1,34 @@
+name: "🧱➛🧪 test code coverage"
+
+on:
+    workflow_call:
+        inputs:
+            os:
+                type: string
+                description: "the operating system/s the jobs need to be set up with"
+                default: "ubuntu-latest"
+            node:
+                type: string
+                description: "the node version/s the jobs need to be set up with"
+                default: "16"
+
+jobs:
+    # run test to check for backwards compatibility
+    test:
+        name: "checking code compatibility"
+        runs-on: ${{ inputs.os }}
+        steps:
+            - uses: DerYeger/yarn-setup-action@master
+              with:
+                  node-version: ${{ inputs.node }}
+            - run: yarn run check:test
+
+    # run coverage checks
+    coverage:
+        name: "checking code coverage"
+        runs-on: ${{ inputs.os }}
+        steps:
+            - uses: DerYeger/yarn-setup-action@master
+              with:
+                  node-version: ${{ inputs.node }}
+            - run: yarn run check:coverage

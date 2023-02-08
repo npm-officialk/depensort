@@ -1,0 +1,25 @@
+name: "🏗️📡 Deploy to development"
+run-name: ${{ github.workflow }}-${{ github.ref_name }}
+
+on:
+    push:
+        branches:
+            - development
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref_name }}
+    cancel-in-progress: true
+
+jobs:
+    validate:
+        name: "✅ validate the pushed changes"
+        uses: ./.github/workflows/validate.yml
+        secrets: inherit
+
+    release:
+        needs: [validate]
+        name: "🎯 release outputs"
+        uses: ./.github/workflows/uniflow-release.yml
+        with:
+            env: development
+        secrets: inherit

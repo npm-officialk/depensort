@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# fix stuff
+echo 'fixing formatting and QA before checks'
+npm run lint-staged
+echo 'fixing code vunerabilities before checks'
+npm run fix:fortify
+echo 'fixing dependancy package vunerabilities before checks'
+npm run fix:audit
+
+# check workings
+echo 'checking if Code Quality is good'
+npm run check:quality
+echo 'checking if all tests pass'
+npm run check:test
+echo 'checking code coverage is passing'
+npm run check:coverage
+echo 'checking code vunerability'
+npm run check:vunerability
+echo 'checking licenses'
+npm run check:license
+echo 'checking dependancy packages'
+npm run check:audit
+echo 'checking build'
+npm run build
+
+echo 'all passed'
