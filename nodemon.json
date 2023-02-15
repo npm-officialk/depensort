@@ -1,8 +1,8 @@
 {
-    "watch": ["./src/**/*", "./tests/**/*"],
-    "ext": ".ts,.js",
-    "ignore": ["./dist/**/*", "./docs/**/*", "./.husky/**/*"],
-    "execMap": {
-        "ts": "node --inspect -r ts-node/register"
-    }
+	"watch": ["./src/**/*", "./tests/**/*"],
+	"ext": ".ts,.js",
+	"ignore": ["./dist/**/*", "./docs/**/*", "./.husky/**/*"],
+	"execMap": {
+		"ts": "node --inspect -r ts-node/register"
+	}
 }
