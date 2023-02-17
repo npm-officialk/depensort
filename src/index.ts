@@ -1,8 +1,8 @@
 import File from "./File"
 import Sorter from "./Sorter"
 
-export default (() => {
-	const packageFile = new File("./package.json")
+const depensort = () => {
+	const packageFile = new File(`${process.cwd()}/package.json`)
 	const packageValues = packageFile.read()
 	if (packageValues.dependencies) {
 		packageValues.dependencies = new Sorter(packageValues.dependencies).sort()
@@ -17,4 +17,6 @@ export default (() => {
 		packageValues.overrides = new Sorter(packageValues.overrides).sort()
 	}
 	packageFile.write(packageValues)
-})()
+}
+
+depensort()
