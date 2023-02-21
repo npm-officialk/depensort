@@ -94,7 +94,7 @@
 		"//checks": "echo 'run checks to ensure QA and working'",
 		"check:format": "prettier --check ./",
 		"check:quality": "eslint --output-file QA/index.html --format html",
-		"precheck:test": "rimraf ./tests/node_modules && yarn link && cd ./tests && yarn link \"depensort\" && yarn install",
+		"precheck:test": "yarn run build:dist && rimraf ./tests/node_modules && yarn link && cd ./tests && yarn link \"depensort\" && yarn install",
 		"check:test": "jest --passWithNoTests && cd ./tests && yarn run test",
 		"postcheck:test": "cd ./tests && yarn unlink \"depensort\"",
 		"check:coverage": "jest --passWithNoTests --coverage",
