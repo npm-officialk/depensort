@@ -42,9 +42,10 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-            - uses: creyD/prettier_action@v4.2
+
+            - uses: creyD/prettier_action@v4.3
               name: "prettifying things"
               with:
-                  commit_message: "ci(formatting): [skip ci] updating format to be consistent"
+                  same_commit: true
                   prettier_options: "--ignore-unknown --config ./.prettierrc --write ./"
                   github_token: ${{ secrets.GH_TOKEN }}

@@ -37,7 +37,7 @@ jobs:
                   fetch-depth: 0
                   token: ${{ secrets.GH_TOKEN }}
 
-            - uses: creyD/prettier_action@v4.2
+            - uses: creyD/prettier_action@v4.3
               with:
                   commit_message: "chore(formatting): [skip ci] updating format to be consistent"
                   prettier_options: "--ignore-unknown --config ./.prettierrc --write ./"
