@@ -4,6 +4,7 @@
 	"description": "use this folder to run jest testing on the package level [DO NOT PUBLISH THIS PACKAGE]",
 	"private": "true",
 	"scripts": {
+		"test": "jest",
 		"sort": "depensort"
 	},
 	"keywords": [],
