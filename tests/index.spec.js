@@ -8,10 +8,10 @@ describe("Testing the working of the package", () => {
 	afterAll(() => {
 		writeFileSync("package.json", JSON.stringify(contents, null, 4), "utf8")
 	})
-	it("should sort package json dependencies", () => {
+	it("should sort package json devDependencies", () => {
 		execSync("yarn run sort")
-		const dependencies = contents.dependencies
-		const sortedArray = Object.entries(dependencies).sort((first, second) => {
+		const devDependencies = contents.devDependencies
+		const sortedArray = Object.entries(devDependencies).sort((first, second) => {
 			let difference = first[0].length - second[0].length
 			if (difference === 0) {
 				difference = first[1].length - second[1].length
@@ -19,6 +19,6 @@ describe("Testing the working of the package", () => {
 			return difference
 		})
 		const newFile = JSON.parse(readFileSync("package.json", "utf8"))
-		expect(JSON.stringify(Object.fromEntries(sortedArray))).toBe(JSON.stringify(newFile.dependencies))
+		expect(JSON.stringify(Object.fromEntries(sortedArray))).toBe(JSON.stringify(newFile.devDependencies))
 	})
 })
