@@ -7,6 +7,7 @@ docs
 coverage
 QA
 assets
+tests
 
 # files
 .**ignore
