@@ -62,6 +62,18 @@ yarn global add depensort
 depensort
 ```
 
+## For the devs
+
+[Refer to the Developer Release Documentation](https://npm-officialk.github.io/depensort)
+
+use the `yarn link` in the package's folder
+
+and `yarn link "depensort"` in the folder you want to test the package in
+
+this will install the package as a symbolic link in the test folder
+
+now you can now use the package as if it was installed.
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first

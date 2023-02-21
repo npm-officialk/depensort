@@ -1,13 +1,10 @@
 import { existsSync, statSync, readFileSync, writeFileSync } from "fs"
 
-/**
- * @requires fs
- */
-
 export default class File {
 	_file: string
 
 	/**
+	 * @requires fs
 	 * @class File
 	 * @classdesc used to read and write files in json format
 	 * @property { String } _file - the file to be used
