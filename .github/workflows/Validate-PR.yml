@@ -3,11 +3,6 @@ run-name: ${{ github.workflow }}-${{ github.ref_name }}
 
 on:
     pull_request:
-        types:
-            - opened
-            - reopened
-            - edited
-            - synchronize
         branches:
             - main
             - development

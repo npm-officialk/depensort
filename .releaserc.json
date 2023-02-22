@@ -1,90 +1,90 @@
 {
-    "repositoryUrl": "https://github.com/npm-officialk/depensort.git",
-    "branches": ["main", { "name": "development", "prerelease": true }],
-    "plugins": [
-        [
-            "@semantic-release/commit-analyzer",
-            {
-                "releaseRules": [
-                    {
-                        "type": "feat",
-                        "release": "minor"
-                    },
-                    {
-                        "type": "fix",
-                        "release": "patch"
-                    },
-                    {
-                        "type": "docs",
-                        "release": false
-                    },
-                    {
-                        "type": "perf",
-                        "release": "minor"
-                    },
-                    {
-                        "type": "build",
-                        "release": false
-                    },
-                    {
-                        "type": "ci",
-                        "release": false
-                    },
-                    {
-                        "type": "chore",
-                        "release": false
-                    },
-                    {
-                        "type": "revert",
-                        "release": false
-                    },
-                    {
-                        "type": "refactor",
-                        "release": "major"
-                    },
-                    {
-                        "type": "style",
-                        "release": false
-                    },
-                    {
-                        "type": "test",
-                        "release": false
-                    }
-                ]
-            }
-        ],
-        [
-            "@semantic-release/release-notes-generator",
-            {
-                "config": "@commitlint/config-conventional",
-                "linkCompare": true
-            }
-        ],
-        [
-            "@semantic-release/changelog",
-            {
-                "changelogFile": "CHANGELOG.md"
-            }
-        ],
-        [
-            "@semantic-release/npm",
-            {
-                "npmPublish": true,
-                "tarballDir": "pack"
-            }
-        ],
-        [
-            "@semantic-release/github",
-            {
-                "assets": "pack/*.tgz"
-            }
-        ],
-        [
-            "@semantic-release/git",
-            {
-                "assets": ["package.json", "README.md", "CHANGELOG.md", "docs"],
-                "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-            }
-        ]
-    ]
+	"repositoryUrl": "https://github.com/npm-officialk/depensort.git",
+	"branches": ["main", { "name": "development", "prerelease": true }],
+	"plugins": [
+		[
+			"@semantic-release/commit-analyzer",
+			{
+				"releaseRules": [
+					{
+						"type": "feat",
+						"release": "minor"
+					},
+					{
+						"type": "fix",
+						"release": "patch"
+					},
+					{
+						"type": "docs",
+						"release": false
+					},
+					{
+						"type": "perf",
+						"release": "minor"
+					},
+					{
+						"type": "build",
+						"release": false
+					},
+					{
+						"type": "ci",
+						"release": false
+					},
+					{
+						"type": "chore",
+						"release": false
+					},
+					{
+						"type": "revert",
+						"release": false
+					},
+					{
+						"type": "refactor",
+						"release": "major"
+					},
+					{
+						"type": "style",
+						"release": false
+					},
+					{
+						"type": "test",
+						"release": false
+					}
+				]
+			}
+		],
+		[
+			"@semantic-release/release-notes-generator",
+			{
+				"config": "@commitlint/config-conventional",
+				"linkCompare": true
+			}
+		],
+		[
+			"@semantic-release/changelog",
+			{
+				"changelogFile": "CHANGELOG.md"
+			}
+		],
+		[
+			"@semantic-release/npm",
+			{
+				"npmPublish": true,
+				"tarballDir": "pack"
+			}
+		],
+		[
+			"@semantic-release/github",
+			{
+				"assets": "pack/*.tgz"
+			}
+		],
+		[
+			"@semantic-release/git",
+			{
+				"assets": ["package.json", "README.md", "CHANGELOG.md", "docs"],
+				"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+			}
+		]
+	]
 }
