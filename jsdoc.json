@@ -3,7 +3,8 @@
 	"recurseDepth": 10,
 	"source": {
 		"include": ["./src"],
-		"includePattern": "\\.(jsx|js|ts|tsx)$"
+		"includePattern": "\\.(jsx|js|ts|tsx)$",
+		"exclude": ["./src/index.ts"]
 	},
 	"sourceType": "module",
 	"tags": {

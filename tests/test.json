@@ -1,7 +1,0 @@
-{
-	"longTextShouldBelast": "demo",
-	"shortFirst": "demo",
-	"sameLength1": "this has a longer value",
-	"sameLength2": "shorter value",
-	"alphabetical": "This should not matter(sorted as per key lenght)"
-}

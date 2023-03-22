@@ -1,0 +1,23 @@
+{
+	"name": "tests",
+	"version": "1.0.0",
+	"description": "use this folder to run jest testing on the package level [DO NOT PUBLISH THIS PACKAGE]",
+	"private": "true",
+	"scripts": {
+		"test": "jest",
+		"sort": "depensort"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"jest": "^29.4.3",
+		"ts-jest": "^29.0.5"
+	},
+	"devDependencies": {
+		"axios": "^1.3.3",
+		"express": "^4.18.2",
+		"mysql": "^2.18.1",
+		"nodemon": "^2.0.20"
+	}
+}

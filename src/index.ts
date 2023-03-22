@@ -1,3 +1,4 @@
+#!/bin/bash/node
 import File from "./File"
 import Sorter from "./Sorter"
 
