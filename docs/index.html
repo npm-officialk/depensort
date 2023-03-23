@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>depensort Home</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">depensort Documentation</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/npm-officialk/depensort"
+                        >
+                            Github
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://www.npmjs.com/~officialk"
+                        >
+                            NPM
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="File.html">File</a></li><li><a href="Sorter.html">Sorter</a></li><li><a href="module.exports.html">exports</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p></p>
+                    <h1>Home</h1>
+                </header>
+                
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1><code>depensort</code></h1>
+<p><code>a package that helps you keep a beautiful looking package.json that has been sorted as per your configuration</code></p>
+<p><a href="https://npm.officialk.dev/depensort"><img src="https://img.shields.io/static/v1?style=for-the-badge&amp;label=%20&amp;message=documentation&amp;color=blue&amp;logo=readthedocs&amp;logoColor=white" alt="Documentation site"></a></p>
+<p><strong>NPM</strong></p>
+<p><a href="https://npmjs.org/package/depensort"><img src="https://img.shields.io/npm/v/depensort?style=for-the-badge" alt="NPM version"></a>
+<img src="https://img.shields.io/bundlephobia/min/depensort?style=for-the-badge" alt="NPM size">
+<img src="https://img.shields.io/snyk/vulnerabilities/npm/depensort?style=for-the-badge" alt="NPM vunerabilities"></p>
+<p><strong>GitHub</strong></p>
+<p><a href="https://github.com/npm-officialk/depensort/README.md"><img src="https://img.shields.io/github/license/npm-officialk/depensort?style=for-the-badge" alt="GitHub License"></a>
+<a href="https://github.com/npm-officialk/depensort/issues/"><img src="https://img.shields.io/github/issues/npm-officialk/depensort?style=for-the-badge" alt="GitHub issues"></a>
+<a href="https://github.com/npm-officialk/depensort/pulls/"><img src="https://img.shields.io/github/issues-pr/npm-officialk/depensort?style=for-the-badge" alt="GitHub PRs"></a>
+<a href="https://github.com/npm-officialk/depensort/milestones/"><img src="https://img.shields.io/github/milestones/all/npm-officialk/depensort?style=for-the-badge" alt="GitHub Milestones"></a>
+<img src="https://img.shields.io/github/sponsors/npm-officialk?style=for-the-badge" alt="GitHub Sponsors"></p>
+<h2>Installation</h2>
+<pre class="prettyprint source lang-yarn"><code>yarn add depensort --dev
+</code></pre>
+<pre class="prettyprint source lang-npm"><code>npm i -D depensort
+</code></pre>
+<h2>Usage</h2>
+<p>The package is used to sort the dependencies in the package.json file in ascending order of key length after every install(or on command)</p>
+<h3>1. Set the package to run after every install</h3>
+<pre class="prettyprint source lang-json"><code>&quot;scripts&quot;:{
+	&quot;postinstall&quot;:&quot;depensort&quot;
+}
+</code></pre>
+<h3>2. Call it manually</h3>
+<p><strong>From the cmd</strong></p>
+<ul>
+<li>Install the package globally</li>
+</ul>
+<pre class="prettyprint source lang-npm"><code>npm i -g depensort
+</code></pre>
+<p>OR</p>
+<pre class="prettyprint source lang-yarn"><code>yarn global add depensort
+</code></pre>
+<ul>
+<li>Call it from the cmd</li>
+</ul>
+<pre class="prettyprint source lang-bash"><code>depensort
+</code></pre>
+<h2>Contributing</h2>
+<p>Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.</p>
+<p>Some files to refer</p>
+<ul>
+<li><a href="./.github/CONTRIBUTING.md">CONTRIBUTING</a></li>
+<li><a href="./.github/CODE_OF_CONDUCT.md">CODE_OF_CONDUCT</a></li>
+</ul>
+<p>Please make sure to update tests as appropriate.</p>
+<h2>License</h2>
+<p><a href="./LICENSE">LICENSE</a></p></article>
+    </section>
+
+
+
+
+
+
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+
+</body>
+</html>

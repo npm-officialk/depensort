@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>depensort Sorter/index.ts</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">depensort Documentation</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/npm-officialk/depensort"
+                        >
+                            Github
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://www.npmjs.com/~officialk"
+                        >
+                            NPM
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="File.html">File</a></li><li><a href="Sorter.html">Sorter</a></li><li><a href="module.exports.html">exports</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>Sorter/index.ts</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>export default class Sorter {
+	_toBeSorted: object
+
+	/**
+	 * @class Sorter
+	 * @classdesc consists of methods used to sorft and manipulate the given object
+	 * @property { String } _toBeSorted - the object to be sorted
+	 * @constructor
+	 * @param { Object } toBeSorted - pass the object to be sorted
+	 * @throws when the object has values that are of any other type than string this will throw an Error
+	 * @example
+	 * //succeeds
+	 * const sorter = new Sorter({
+	 * 		"key":"value",
+	 * 		"key1":"value1"
+	 * })
+	 * // fails
+	 * const sorter = new Sorter({
+	 * 		"key":true
+	 * })
+	 * // fails
+	 * const sorter = new Sorter({
+	 * 		"key":1
+	 * })
+	 * // fails
+	 * const sorter = new Sorter({
+	 * 		"key":["anything","other","than","a","normal","string","in","value","will","fail"]
+	 * })
+	 */
+	constructor(toBeSorted: object) {
+		if (Object.entries(toBeSorted).filter(item => item.length !== 2 || typeof item[1] !== "string").length > 0) {
+			throw new Error("The object should be a simple mapping of keys and string values")
+		}
+		this._toBeSorted = toBeSorted
+	}
+
+	/**
+	 * @memberof Sorter
+	 * @method sort
+	 * @instance
+	 * @description sorts the object set in the _toBeSorted as per the key length(and value length if key length is same)
+	 * @returns { Object } - returns the fully sorted array sortedArray
+	 * @example
+	 * const sorter = new Sorter({
+	 * 		"second":"value",
+	 * 		"first":"value1",
+	 * 		"samelength1":"longer value",
+	 * 		"samelength2":"small value"
+	 * })
+	 * const output = sorter.sort()
+	 * console.log(output)
+	 * // {
+	 * //		"first":"value1",
+	 * //		"second":"value",
+	 * //		"samelength2":"small value",
+	 * //		"samelength1":"longer value"
+	 * // }
+	 */
+	sort() {
+		const sortedArray = Object.entries(this._toBeSorted).sort((first: any, second: any) => {
+			let difference = first[0].length - second[0].length
+			if (difference === 0) {
+				difference = first[1].length - second[1].length
+			}
+			return difference
+		})
+		return Object.fromEntries(sortedArray)
+	}
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+
+</body>
+</html>

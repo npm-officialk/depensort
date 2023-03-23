@@ -14,6 +14,8 @@ echo 'checking if Code Quality is good'
 npm run check:quality
 echo 'checking if all tests pass'
 npm run check:test
+echo 'checking if all tests for package integration pass'
+npm run check:test-integrity
 echo 'checking code coverage is passing'
 npm run check:coverage
 echo 'checking code vunerability'

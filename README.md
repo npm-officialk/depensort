@@ -20,17 +20,59 @@
 
 ## Installation
 
-```cmd
-yarn add depensort
+```yarn
+yarn add depensort --dev
 ```
 
-```cmd
-npm install depensort
+```npm
+npm i -D depensort
 ```
 
 ## Usage
 
-[Refer to the Documentation](https://npm.officialk.dev/depensort)
+The package is used to sort the dependencies in the package.json file in ascending order of key length after every install(or on command)
+
+### 1. Set the package to run after every install
+
+```json
+"scripts":{
+	"postinstall":"depensort"
+}
+```
+
+### 2. Call it manually
+
+**From the cmd**
+
+-   Install the package globally
+
+```npm
+npm i -g depensort
+```
+
+OR
+
+```yarn
+yarn global add depensort
+```
+
+-   Call it from the cmd
+
+```bash
+depensort
+```
+
+## For the devs
+
+[Refer to the Developer Release Documentation](https://npm-officialk.github.io/depensort)
+
+use the `yarn link` in the package's folder
+
+and `yarn link "depensort"` in the folder you want to test the package in
+
+this will install the package as a symbolic link in the test folder
+
+now you can now use the package as if it was installed.
 
 ## Contributing
 
