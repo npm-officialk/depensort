@@ -11,25 +11,6 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
-    stale:
-        name: "🧹 clear stale issues"
-        runs-on: ubuntu-latest
-        permissions:
-            issues: write
-            pull-requests: write
-        steps:
-            - uses: actions/stale@v7
-              with:
-                  stale-issue-message: "This issue is stale because it has been open 30 days with no activity. Remove the stale label or comment else this issue will be closed in 5 days."
-                  close-issue-message: "This issue was closed because it stalled for 5 days with no activity.,"
-                  days-before-issue-stale: 30
-                  days-before-issue-close: 5
-
-                  stale-pr-message: "This PR is stale because it has been open 45 days with no activity. Remove the stale label or comment, else this will be closed in 10 days."
-                  close-pr-message: "This PR was closed because it stalled for 10 days with no activity."
-                  days-before-pr-stale: 45
-                  days-before-pr-close: 10
-
     cleanup:
         name: "⛔️ close marked by labels"
         runs-on: ubuntu-latest

@@ -20,9 +20,15 @@ on:
                 required: true
             NPM_TOKEN:
                 required: true
+            FTP_SERVER:
+                required: false
+            FTP_USERNAME:
+                required: false
+            FTP_PASSWORD:
+                required: false
 
 jobs:
-    dist:
+    release:
         name: "publishing the package to npm"
         runs-on: ${{ inputs.os }}
         environment: ${{ inputs.env }}
@@ -49,3 +55,13 @@ jobs:
                   same_commit: true
                   prettier_options: "--ignore-unknown --config ./.prettierrc --write ./"
                   github_token: ${{ secrets.GH_TOKEN }}
+
+            - if: ${{ inputs.env == "production" }}
+              uses: airvzxf/ftp-deployment-action@latest
+              with:
+                  server: ${{ secrets.FTP_SERVER }}
+                  user: ${{ secrets.FTP_USERNAME }}
+                  password: ${{ secrets.FTP_PASSWORD }}
+                  local_dir: "./docs"
+                  remote_dir: "./depensort"
+                  delete: "true"
