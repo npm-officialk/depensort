@@ -1,6 +1,6 @@
 {
 	"name": "depensort",
-	"version": "1.0.0-development.2",
+	"version": "1.0.0-development.3",
 	"description": "a package that helps you keep a beautiful looking package.json that has been sorted as per your configuration",
 	"author": {
 		"name": "npm-officialk",
