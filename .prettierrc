@@ -10,6 +10,6 @@
 	"arrowParens": "avoid",
 	"requirePragma": false,
 	"singleAttributePerLine": true,
-	"endOfLine": "crlf",
+	"endOfLine": "auto",
 	"useTabs": true
 }
