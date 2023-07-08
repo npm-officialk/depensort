@@ -18,7 +18,7 @@
 		"no-unused-vars": "warn",
 		"no-dupe-class-members": "off",
 		"indent": ["error", "tab"],
-		"linebreak-style": ["error", "unix"],
+		"linebreak-style": ["warn", "unix"],
 		"quotes": ["error", "double"],
 		"semi": ["error", "never"]
 	}
