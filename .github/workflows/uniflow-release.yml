@@ -56,7 +56,7 @@ jobs:
                   prettier_options: "--ignore-unknown --config ./.prettierrc --write ./"
                   github_token: ${{ secrets.GH_TOKEN }}
 
-            - if: inputs.env == 'production'
+            - if: ${{ inputs.env == 'production' }}
               uses: airvzxf/ftp-deployment-action@latest
               with:
                   server: ${{ secrets.FTP_SERVER }}
