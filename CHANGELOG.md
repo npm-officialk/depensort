@@ -1,3 +1,14 @@
+## 1.0.0 (2023-07-09)
+
+* refactor(package): updated package to use the yargs package ([7467714](https://github.com/npm-officialk/depensort/commit/7467714))
+* feat(v1): releasing v1 ([9d1e0f8](https://github.com/npm-officialk/depensort/commit/9d1e0f8)), closes [#8](https://github.com/npm-officialk/depensort/issues/8) [#8](https://github.com/npm-officialk/depensort/issues/8) [#11](https://github.com/npm-officialk/depensort/issues/11) [#9](https://github.com/npm-officialk/depensort/issues/9) [#11](https://github.com/npm-officialk/depensort/issues/11) [#9](https://github.com/npm-officialk/depensort/issues/9) [#10](https://github.com/npm-officialk/depensort/issues/10) [#12](https://github.com/npm-officialk/depensort/issues/12) [#10](https://github.com/npm-officialk/depensort/issues/10) [#13](https://github.com/npm-officialk/depensort/issues/13) [#15](https://github.com/npm-officialk/depensort/issues/15) [#16](https://github.com/npm-officialk/depensort/issues/16)
+* chore(setup): Intial commit [skip ci] ([52dda32](https://github.com/npm-officialk/depensort/commit/52dda32))
+
+
+### BREAKING CHANGE
+
+* removed the export of the function and instead calling the function
+
 ## 1.0.0-development.3 (2023-07-08)
 
 -   refactor(package): updated depensort to use yargs package ([c18cb9c](https://github.com/npm-officialk/depensort/commit/c18cb9c))
